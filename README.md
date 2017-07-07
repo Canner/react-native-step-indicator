@@ -8,6 +8,7 @@ Features
   - Custom Styling
   - Supports vertical and horizontal orientation
   - Supports animation between steps
+  - This fork add settings for label positions. In vertical orientation you can set your label in `left` or `right`, in horizontal you can set eithor `top` or `bottom`
 
 
 ![alt tag](art/HorizontalStepIndicator.gif) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![alt tag](art/VerticalStepIndicator.gif)
@@ -83,6 +84,7 @@ onPageChange(position){
 | `currentPosition` | Number  | Current position in steps | 0
 | ```stepCount``` | Number  | Number of steps | 5
 | ```direction``` | String  | Orientation(i.e. horizontal,vertical) | horizontal
+| ```labelPosition``` | String  | Label Position(i.e. horizontal(`top`, `bottom`),vertical (`left`, `right`)) | horizontal(`bottom`), vertical(`right`)
 | ```customStyles``` | Object  | Custom styling | {}
 | ```labels``` | Array  | Labels for each step | null
 | `onPress` | Function (position: Number) | Function called when a step is pressed | null 

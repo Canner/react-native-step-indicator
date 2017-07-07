@@ -89,7 +89,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.stepIndicator}>
-          <StepIndicator customStyles={firstIndicatorStyles} currentPosition={this.state.currentPage} labels={["Account","Profile","Band","Membership","Dashboard"]} />
+          <StepIndicator customStyles={firstIndicatorStyles} currentPosition={this.state.currentPage} labels={["Account","Profile","Band","Membership","Dashboard"]} labelPosition="top"/>
         </View>
         <View style={styles.stepIndicator}>
           <StepIndicator customStyles={secondIndicatorStyles} currentPosition={this.state.currentPage} labels={["Cart","Delivery Address","Order Summary","Payment Method","Track"]} />

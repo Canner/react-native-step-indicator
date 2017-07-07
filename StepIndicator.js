@@ -47,6 +47,7 @@ export default class StepIndicator extends PureComponent {
     this.progressAnim = new Animated.Value(0)
     this.sizeAnim = new Animated.Value(this.customStyles.stepIndicatorSize);
     this.borderRadiusAnim = new Animated.Value(this.customStyles.stepIndicatorSize/2);
+    this.renderProgressBarBackground = this.renderProgressBarBackground.bind(this);
   }
 
   stepPressed(position) {
@@ -57,12 +58,32 @@ export default class StepIndicator extends PureComponent {
 
   render() {
     const { labels, direction } = this.props;
+    let {labelPosition} = this.props;
+    if (direction === 'horizontal') {
+      if (labelPosition && (labelPosition !== 'top' && labelPosition !== 'bottom')) {
+        throw new Error('horizontal direction, label position can only be `top` or `bottom`');
+      } else if (!labelPosition) {
+        labelPosition = 'bottom';
+      }
+    } else if (direction === 'vertical') {
+      if (labelPosition && (labelPosition !== 'left' && labelPosition !== 'right')) {
+        throw new Error('vertical direction, label position can only be `left` or `right`')
+      } else if (!labelPosition) {
+        labelPosition = 'right';
+      }
+    }
+
+    console.log(labelPosition)
+
     return (
       <View style={[styles.container, direction === 'vertical' ? {flexDirection: 'row', flex:1} : {flexDirection: 'column'}]}>
-        {this.state.width !== 0 && this.state.width !== 0 && this.renderProgressBarBackground()}
-        {this.state.width !== 0 && this.state.width !== 0 && this.renderProgressBar()}
-        {this.renderStepIndicator()}
-        {labels && this.renderStepLabels()}
+        {(labelPosition === 'left' || labelPosition === 'top') && labels && this.renderStepLabels()}
+        <View style={[styles.container, direction === 'vertical' ? {flexDirection: 'row', flex:1, marginRight: this.customStyles.stepIndicatorSize * 2} : {flexDirection: 'column'}]}>
+          {this.state.width !== 0 && this.state.width !== 0 && this.renderProgressBarBackground()}
+          {this.state.width !== 0 && this.state.width !== 0 && this.renderProgressBar()}
+          {this.renderStepIndicator()}
+        </View>
+        {(labelPosition === 'right' || labelPosition === 'bottom') && labels && this.renderStepLabels()}
       </View>
     );
   }

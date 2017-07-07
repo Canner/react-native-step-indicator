@@ -6,7 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "react-native": "watchman watch-del-all && react-native start --root --reset-cache",
-    "mobile": "npm run react-native"
+    "mobile": "npm run react-native",
+		"ios": "yarn run haul start -- --platform ios",
+    "haul": "haul start"
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "haul": "^1.0.0-beta.2",
     "jest": "18.1.0",
     "react-test-renderer": "15.4.2"
   },

@@ -1,6 +1,6 @@
 {
-  "name": "react-native-step-indicator",
-  "version": "0.0.6",
+  "name": "@canner/react-native-step-indicator",
+  "version": "0.1.0",
   "description": "A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView",
   "main": "StepIndicator.js",
   "types": "index.d.ts",
@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/24ark/react-native-step-indicator/issues"
   },
-  "homepage": "https://github.com/24ark/react-native-step-indicator#readme"
+  "homepage": "https://github.com/24ark/react-native-step-indicator#readme",
+  "devDependencies": {
+    "react": "16.0.0-alpha4",
+    "react-native": "0.45.1"
+  }
 }
