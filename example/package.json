@@ -11,7 +11,6 @@
   "dependencies": {
     "react": "16.0.0-alpha.12",
     "react-native": "0.45.1",
-    "react-native-paged-scroll-view": "^2.0.4",
     "react-native-step-indicator": "file:../",
     "react-native-viewpager": "^0.2.13"
   },

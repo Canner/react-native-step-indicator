@@ -118,6 +118,10 @@ onPageChange(position){
 
 If you'd like to see something added or changed to this module please open a new GitHub issue. Pull requests are always welcome.
 
+### Develop
+
+use `yarn` instead of `npm`
+
 ### License
 
  - [Apache-2.0](https://github.com/24ark/react-native-step-indicator/blob/master/LICENSE).  © Arkit Vora
