@@ -8,6 +8,7 @@
     "react-native": "watchman watch-del-all && react-native start --root --reset-cache",
     "mobile": "npm run react-native",
 		"ios": "yarn run haul start -- --platform ios",
+		"android": "yarn run haul start -- --platform android",
     "haul": "haul start"
   },
   "dependencies": {
