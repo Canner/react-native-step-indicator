@@ -73,8 +73,6 @@ export default class StepIndicator extends PureComponent {
       }
     }
 
-    console.log(labelPosition)
-
     return (
       <View style={[styles.container, direction === 'vertical' ? {flexDirection: 'row', flex:1} : {flexDirection: 'column'}]}>
         {(labelPosition === 'left' || labelPosition === 'top') && labels && this.renderStepLabels()}
