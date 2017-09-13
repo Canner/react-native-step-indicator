@@ -115,6 +115,13 @@ onPageChange(position){
 | ```currentStepLabelColor``` | String  | '#4aae4f'
 | ```labelSize``` | Number  | 13
 
+### Animation
+
+| Name | Type | Default
+| ------------ | ------------ |------------ |
+| ```processDuration``` | Number  | 1000
+| ```radiusDuration``` | Number  | 500
+| ```sizeDuration``` | Number  | 500
 
 ### Contributing
 

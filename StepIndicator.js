@@ -40,7 +40,11 @@ export default class StepIndicator extends PureComponent {
       stepIndicatorLabelUnFinishedColor: 'rgba(255,255,255,0.5)',
       labelColor: '#000000',
       labelSize: 13,
-      currentStepLabelColor: '#4aae4f'
+      currentStepLabelColor: '#4aae4f',
+      // animate
+      processDuration: 1000,
+      radiusDuration: 500,
+      sizeDuration: 500
     };
 
     this.customStyles = Object.assign(defaultStyles, props.customStyles);
@@ -267,7 +271,7 @@ export default class StepIndicator extends PureComponent {
     }
 
     onCurrentPositionChanged = (position) => {
-      let { stepCount } = this.props
+      let { stepCount, processDuration, sizeDuration, radiusDuration } = this.props
       if(position > stepCount-1) {
         position = stepCount-1;
       }
@@ -277,16 +281,16 @@ export default class StepIndicator extends PureComponent {
       Animated.sequence([
         Animated.timing(
           this.progressAnim,
-          {toValue: animateToPosition,duration:200}
+          {toValue: animateToPosition, duration: processDuration}
         ),
         Animated.parallel([
           Animated.timing(
             this.sizeAnim,
-            {toValue: this.customStyles.currentStepIndicatorSize, duration:100}
+            {toValue: this.customStyles.currentStepIndicatorSize, duration: sizeDuration}
           ),
           Animated.timing(
             this.borderRadiusAnim,
-            {toValue: this.customStyles.currentStepIndicatorSize/2, duration:100}
+            {toValue: this.customStyles.currentStepIndicatorSize/2, duration: radiusDuration}
           )
         ])
       ]).start();
